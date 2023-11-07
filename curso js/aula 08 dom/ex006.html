@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teste aula dom</title>
+    <style>
+        body {
+            background-color: rgb(97, 97, 230);
+            color: white;
+            font: normal 20pt   ARIAL;
+
+            
+
+
+
+        }
+
+
+    </style>
+</head>
+<body>
+    
+</body>
+
+    <h1> iniciando estudos com dom!</h1>
+    <p> aqui vai o resultado</p>
+    <p> Aprendendo a usar o <strong> Dom</strong> em javascript.</p>
+    <div id="msg"> clique em mim</div>
+
+    <script>
+        var p1 = document.getElementsByTagName('p')[1]
+        var corpo = document.body
+        // window.document.write('olá mundo \n')
+        window.document.write('\n está escrito assim: '+ p1.innerText )
+
+        // corpo.style.background = 'black'
+
+        //p1.style.color = 'blue'
+
+        document.write(p1.innerHTML) //innetHTML traz o strong
+
+        //window.alert(p1.innerText)
+        /*
+        var d = window.document.getElementById('msg')
+        d.style.background = 'green'
+       // d.innerText = "estou agurdando . . ."
+
+        */
+        
+        // tambem funciona por name--> document.getElementsByName(msg)[0]
+
+
+       // window.document.getElementsByClassName ('x')  por calsse name
+
+        var d = window.document.querySelector ('div#msg')
+        d.style.color = 'blue'
+        d.style.background = "green"
+        
+
+
+
+
+
+
+    </script>
+
+</html>

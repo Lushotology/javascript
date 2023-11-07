@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulado</title>
+
+    <style>
+        body {
+            font: normal 14pt Arial;
+            background: rgb(187, 168, 233);
+
+
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+    <h1>Sistema do consulado de verificação de Nacionalidade</h1>
+    <h2>Por favor, insira seu país:</h2>
+    <input type="text" name="nomepais" id="pais">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="res"></div>
+
+
+
+
+
+    <script>
+       // alert('Bem-vindo ao consulado')
+
+       function verificar() {
+        var pais = document.getElementById('pais').value
+        var res = document.getElementById('res')
+        res.innerHTML = `Seu país é ${pais}.`
+
+    if (pais === 'Brasil'){
+        res.innerHTML+= `<p>Você é Brasileiro.</p>`
+
+    } else {
+        res.innerHTML+= `<p>Você é estrangeiro</p>`
+
+
+    }
+
+    }
+
+
+
+        
+
+
+
+    </script>
+
+</body>
+</html>

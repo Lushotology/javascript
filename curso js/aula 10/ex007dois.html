@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subtraindo Valores</title>
+    <style>
+        body{
+            font: normal 18pt Arial;
+            text-align: center;
+
+        }
+        input {
+            font: normal 16pt Arial;
+            text-align: center;
+            background: rgb(247, 162, 162);
+
+
+        }
+
+        div {
+            text-align: center;
+
+
+        }
+        
+        div#res {
+            margin-top: 10px;
+            text-align: center;
+
+
+
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+    <h1> SUBTRAÇÃO</h1>
+    <input type="number" name="texto1" id="texto1"> - <!--tudo em branco é texto-->
+    <input type="number" name="texto2" id="texto2">
+    <input type="button" value="Subtrair" onclick="subtrair()">
+
+    <div id="res"> Resultado </div>
+
+    <script>
+        alert('AQUI VAMOS SUBTRAIR')
+        confirm('BORA LÁ?')
+        function subtrair() {
+            var t1 = document.querySelector('input#texto1')
+            var t2 = document.querySelector('input#texto2')
+            var res = document.getElementById('res')
+
+            var n1 = Number(t1.value)
+            var n2 = Number(t2.value)
+            var s = n1 - n2
+
+            res.innerText = `A subtração de ${n1} - ${n2} é ${s} !`
+        }
+
+
+
+    </script>    
+</body>
+
+
+</html>

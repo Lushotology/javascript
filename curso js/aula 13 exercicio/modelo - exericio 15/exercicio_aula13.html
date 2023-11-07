@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Idade</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<style>
+
+
+</style>
+
+<body>
+    <header>
+        <!--titulos-->
+        <h1>Verificador</h1>
+
+    </header>
+
+    <section>
+        <div>
+            <p>Ano de Nascimento:
+
+                <input type="number" name="txtano" id="txtano" min="0">
+            </p>
+            
+            <p>Sexo:
+                <input type="radio" name="radsex" id="masc">
+                <label for="masc"> Masculino</label>
+                <input type="radio" name="radsex" id="femi">
+                <label for="femi">Feminino</label>
+
+
+            </p>
+            <input class="container" type="button" value="Verificar" onclick="verificar()">
+
+        </div>
+
+        <div id="res">
+            Preencha os dados acima para ver o resultado!
+
+
+        </div>
+
+        
+
+    </section>
+
+    <footer>
+        <!--rodapé-->
+        <p>&copy;Rafael Produções</p>
+
+    </footer>
+
+    <script src="./script.js"></script> <!-- nao deu certo fazer igual ao do video, dai eu coloque "./script.js"-->
+
+
+        
+    
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#area {
+            background: rgb(131, 224, 131);
+            font: normal 20pt Arial;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+
+            
+            
+
+
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div id="area" > <!--onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()" -->
+        Interaja...
+
+    <script>
+        var a = window.document.getElementById('area') //pode usar querySelector('area')
+        a.addEventListener ('click', clicar)
+        a.addEventListener ('mouseenter', entrar)
+        a.addEventListener ('mouseout', sair)
+        
+        function clicar() {
+            //a function clicar só triggar quando eu clicar na area delimitada
+                
+                a.innerText = 'clicou'
+                a.style.background = 'red'
+           // objeto a tá direto ligado ao elemento  id=area
+        
+        }
+     
+        function entrar() {
+
+                a.innerText = 'entrou!'
+                
+            }
+
+        function sair(){
+                a.innerText = 'saiu!'
+                a.style.background = 'rgb(131, 224, 131)'
+                
+
+
+
+           }
+           
+        
+
+
+    </script>
+
+ </div>
+
+
+</body>
+</html>

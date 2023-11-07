@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jogo de Xadrez</title>
+  <style>
+    .chessboard {
+      display: grid;
+      grid-template-columns: repeat(8, 50px);
+      grid-template-rows: repeat(8, 50px);
+    }
+
+    .cell {
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      font-size: 36px;
+      cursor: pointer;
+    }
+
+    .white {
+      background-color: #eee;
+    }
+
+    .black {
+      background-color: #222;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>Jogo de Xadrez</h1>
+  <div class="chessboard" id="chessboard"></div>
+
+  <script>
+    const chessboard = document.getElementById("chessboard");
+    const cells = Array.from({ length: 64 });
+
+    let selectedPiece = null;
+
+    // Cria as células do tabuleiro com classes de cor
+    cells.forEach((_, index) => {
+      const cell = document.createElement("div");
+      cell.classList.add("cell");
+      cell.classList.add(index % 16 < 8 ? (index % 2 === 0 ? "white" : "black") : (index % 2 === 0 ? "black" : "white"));
+      cell.dataset.index = index;
+      cell.addEventListener("click", () => handleCellClick(index));
+      chessboard.appendChild(cell);
+      cells[index] = cell;
+    });
+
+    // Preenche as peças no tabuleiro (você pode personalizar isso)
+    function setupChessboard() {
+      const pieces = [
+        "♜", "♞", "♝", "♛", "♚", "♝", "♞", "♜",
+        "♟", "♟", "♟", "♟", "♟", "♟", "♟", "♟",
+        "", "", "", "", "", "", "", "",
+        "", "", "", "", "", "", "", "",
+        "", "", "", "", "", "", "", "",
+        "", "", "", "", "", "", "", "",
+        "♙", "♙", "♙", "♙", "♙", "♙", "♙", "♙",
+        "♖", "♘", "♗", "♕", "♔", "♗", "♘", "♖"
+      ];
+
+      cells.forEach((cell, index) => {
+        cell.textContent = pieces[index];
+      });
+    }
+
+    // Função para lidar com cliques nas células
+    function handleCellClick(index) {
+      const cell = cells[index];
+      const piece = cell.textContent;
+
+      if (selectedPiece === null) {
+        if (piece) {
+          selectedPiece = cell;
+          cell.classList.add("selected");
+        }
+      } else {
+        selectedPiece.classList.remove("selected");
+        cell.textContent = selectedPiece.textContent;
+        selectedPiece.textContent = "";
+        selectedPiece = null;
+      }
+    }
+
+    // Inicializa o tabuleiro de xadrez
+    setupChessboard();
+  </script>
+</body>
+</html>
